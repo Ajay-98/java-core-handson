@@ -17,6 +17,15 @@ public enum TafficeLight {
         return this.msg;
     }
 
+    public String getMessage(TafficeLight getMessage) {
+        return switch (getMessage)
+        {
+            case RED -> RED.msg;
+            case GREEN -> GREEN.msg;
+            case YELLOW -> YELLOW.msg;
+        };
+    }
+
 }
 
 class testtrafficelight {
@@ -25,7 +34,7 @@ class testtrafficelight {
         TafficeLight test2 = TafficeLight.YELLOW;
         TafficeLight test3 = TafficeLight.RED;
 
-        System.out.println(" Whats the Message of GREEN " + test1.getMsg());
+        System.out.println(" Whats the Message of GREEN " + test1.getMessage(test1));
         System.out.println(" Whats the Message of YELLOW " + test2.getMsg());
         System.out.println(" Whats the Message of RED " + test3.getMsg());
     }
